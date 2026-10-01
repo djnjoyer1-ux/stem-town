@@ -181,3 +181,96 @@ p { line-height: 1.55; }
   padding-left: .8rem;
   border-left: 2px solid var(--line);
 }
+
+
+/* Thread visibility hardening */
+.card {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.layout > section,
+#feed {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.comments {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 1rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--line);
+  overflow: visible !important;
+  max-height: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.thread-label {
+  display: block !important;
+  margin-bottom: .35rem;
+  color: var(--muted);
+  font-size: .8rem;
+  overflow: visible !important;
+}
+
+.comment {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: .6rem;
+  width: 100% !important;
+  padding: .65rem 0;
+  overflow: visible !important;
+  max-height: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.comment-body {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.comment-text {
+  display: block !important;
+  width: 100% !important;
+  margin-top: .2rem;
+  line-height: 1.5;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-height: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: var(--text) !important;
+}
+
+.thread-children {
+  display: block !important;
+  margin-top: .5rem;
+  margin-left: .25rem;
+  padding-left: .8rem;
+  border-left: 2px solid var(--line);
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.comment .identity-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: .35rem;
+  overflow: visible !important;
+}
+
+.comment .avatar.small {
+  display: block !important;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+}
