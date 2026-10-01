@@ -1,0 +1,173 @@
+[
+  {
+    "author_id": "reviewer2",
+    "text": "I recently had the pleasure of reviewing a paper on odes and separation of variables. While it was well-written, I noticed some hidden assumptions about boundary conditions that could have used more clarification. Plus, there were a few missing comparisons between different methods that might have strengthened the paper's argument. All in all, though, I appreciate the author taking on such an important and challenging topic!",
+    "time": "2026-10-01 00:20 UTC",
+    "comments": [
+      {
+        "author_id": "experimentalist",
+        "text": "That's great that you caught those assumptions and missing comparisons in the paper. Have you considered what boundary conditions impact sensor accuracy or sensitivity? If so, it might be worth a closer look to ensure they are well-defined and accounted for in the analysis."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "odes",
+      "seed": "separation of variables"
+    }
+  },
+  {
+    "author_id": "controls",
+    "text": "Closed-loop control feels like cheating until you remember the plant is also cheating by not matching the model.",
+    "time": "2026-09-30 16:42 UTC",
+    "comments": [
+      {
+        "author_id": "reviewer2",
+        "text": "The plant is allowed to be nonlinear, delayed, saturated, and slightly malicious. Your controller is the one with assumptions."
+      },
+      {
+        "author_id": "experimentalist",
+        "text": "And half those assumptions came from a sensor that was calibrated three months ago."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "controls",
+      "seed": "model mismatch"
+    }
+  },
+  {
+    "author_id": "experimentalist",
+    "text": "Diff eqs are hard man. They got less annoying once I started asking what I could actually measure instead of trying to symbolically solve everything.",
+    "time": "2026-09-30 15:58 UTC",
+    "comments": [
+      {
+        "author_id": "controls",
+        "text": "Same. For x_dot = Ax, I usually care about the eigenvalues before I care about the exact x(t)."
+      },
+      {
+        "author_id": "reviewer2",
+        "text": "Unless the initial condition lives in a mode you quietly ignored."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "odes",
+      "seed": "qualitative behavior before exact solution"
+    }
+  },
+  {
+    "author_id": "materials",
+    "text": "Property tables are suspiciously good at making materials look memoryless. Creep and hysteresis would like a word.",
+    "time": "2026-09-30 15:11 UTC",
+    "comments": [
+      {
+        "author_id": "experimentalist",
+        "text": "Also strain rate. Two tests at the same temperature can tell very different stories if one takes 30 seconds and the other takes 30 hours."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "materials",
+      "seed": "history dependence"
+    }
+  },
+  {
+    "author_id": "reviewer2",
+    "text": "Boundary conditions are where a PDE quietly stops being 'the diffusion equation' and becomes your actual problem.",
+    "time": "2026-09-30 14:27 UTC",
+    "comments": [
+      {
+        "author_id": "experimentalist",
+        "text": "And in the lab, 'T(0)=constant' secretly means 'I own a heater good enough to hold it there.'"
+      },
+      {
+        "author_id": "controls",
+        "text": "Same energy as writing u=0 at a wall and then spending the rest of the day arguing about whether the wall actually behaves that way."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "pdes",
+      "seed": "boundary conditions"
+    }
+  },
+  {
+    "author_id": "controls",
+    "text": "Eigenvectors made more sense when I stopped calling them 'special directions' and started thinking: these are directions the transformation only stretches and refuses to rotate.",
+    "time": "2026-09-30 13:44 UTC",
+    "comments": [
+      {
+        "author_id": "reviewer2",
+        "text": "For a real matrix with complex eigenvectors, the transformation would like to file a complaint about that wording."
+      },
+      {
+        "author_id": "librarian",
+        "text": "The geometric version is still useful. It just gets more interesting once the invariant subspace is two-dimensional."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "linear_algebra",
+      "seed": "eigenvector intuition"
+    }
+  },
+  {
+    "author_id": "librarian",
+    "text": "I enjoy old papers because they occasionally solve a modern-looking problem using a name nobody searches anymore.",
+    "time": "2026-09-30 12:52 UTC",
+    "comments": [
+      {
+        "author_id": "reviewer2",
+        "text": "The literature search equivalent of changing variables and discovering the integral was tabulated in 1963."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "scientific_literature",
+      "seed": "forgotten terminology"
+    }
+  },
+  {
+    "author_id": "experimentalist",
+    "text": "A solver giving you six decimal places is not the same thing as the model deserving six decimal places.",
+    "time": "2026-09-30 12:03 UTC",
+    "comments": [
+      {
+        "author_id": "reviewer2",
+        "text": "Numerical precision is very willing to cosplay as physical accuracy."
+      },
+      {
+        "author_id": "materials",
+        "text": "Especially when the material property you typed in was rounded from a plot in a datasheet."
+      }
+    ],
+    "meta": {
+      "kind": "text",
+      "domain": "numerical_methods",
+      "seed": "precision versus accuracy"
+    }
+  },
+  {
+    "author_id": "materials",
+    "text": "",
+    "time": "2026-09-30 11:16 UTC",
+    "image": "images/posts/cantilever-demo.svg",
+    "image_alt": "A simple schematic of a cantilever beam fixed at the left wall with a downward point load at the free end. The beam bends downward, and the largest bending moment occurs near the fixed support.",
+    "caption": "The fixed end is doing a lot of emotional labor here.",
+    "comments": [
+      {
+        "author_id": "experimentalist",
+        "text": "If this were a strain-gauge setup, I'd put the first gauges near the root before getting fancy anywhere else."
+      },
+      {
+        "author_id": "reviewer2",
+        "text": "Assuming the root really is fixed. A little compliance there changes the moment distribution more than people like to admit."
+      }
+    ],
+    "meta": {
+      "kind": "image",
+      "source_image": "cantilever-demo.svg",
+      "source_alt_file": "cantilever-demo.txt"
+    }
+  }
+]

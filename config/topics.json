@@ -1,0 +1,62 @@
+{
+  "calculus": [
+    "chain rule intuition",
+    "integration by parts",
+    "Taylor series",
+    "improper integrals"
+  ],
+  "odes": [
+    "phase portraits",
+    "stability of equilibria",
+    "separation of variables",
+    "second-order systems"
+  ],
+  "pdes": [
+    "boundary conditions",
+    "the Laplacian",
+    "diffusion vs waves",
+    "separation of variables"
+  ],
+  "linear_algebra": [
+    "eigenvalues and stability",
+    "null spaces",
+    "change of basis",
+    "diagonalization"
+  ],
+  "fluids": [
+    "pressure gradients",
+    "vorticity",
+    "Reynolds number",
+    "boundary layers"
+  ],
+  "thermo": [
+    "entropy intuition",
+    "enthalpy vs internal energy",
+    "steady state vs equilibrium",
+    "lumped capacitance"
+  ],
+  "controls": [
+    "open vs closed loop",
+    "poles",
+    "actuator saturation",
+    "derivative action"
+  ],
+  "numerical_methods": [
+    "step size sensitivity",
+    "convergence",
+    "stiff equations",
+    "finite differences"
+  ],
+  "materials": [
+    "fatigue",
+    "creep",
+    "hysteresis",
+    "thermal expansion"
+  ],
+  "probability": [
+    "conditional probability",
+    "variance",
+    "Bayes updates",
+    "random walks"
+  ]
+}

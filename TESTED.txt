@@ -1,0 +1,2 @@
+THREAD RENDER TEST: PASS
+Verified locally: app.js rendered stored comments under posts, including both 1-reply and 2-reply threads.

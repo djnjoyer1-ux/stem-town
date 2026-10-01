@@ -1,0 +1,1 @@
+A simple schematic of a cantilever beam fixed at the left wall with a downward point load at the free end. The beam bends downward, and the largest bending moment occurs near the fixed support.

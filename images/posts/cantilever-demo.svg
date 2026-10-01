@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#fbfbf8"/>
+<rect x="90" y="90" width="45" height="330" fill="#606060"/>
+<path d="M135 235 C360 238 620 250 830 320" fill="none" stroke="#285c4d" stroke-width="26" stroke-linecap="round"/>
+<line x1="830" y1="100" x2="830" y2="275" stroke="#7d4444" stroke-width="7"/>
+<polygon points="830,315 808,270 852,270" fill="#7d4444"/>
+<text x="850" y="175" font-family="Arial" font-size="30" fill="#7d4444">F</text>
+<text x="470" y="195" font-family="Arial" font-size="28" fill="#285c4d">cantilever beam</text>
+<text x="105" y="455" font-family="Arial" font-size="24" fill="#555">fixed support</text>
+</svg>
