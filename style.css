@@ -1,16 +1,23 @@
 :root {
-  --bg: #f4f4ef;
+  --bg: #f5f5f1;
   --card: #fffefa;
   --text: #202522;
-  --muted: #6d756f;
+  --muted: #707872;
   --line: #d9ddd7;
   --accent: #285c4d;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
+html,
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -19,49 +26,71 @@ body {
 .topbar {
   border-bottom: 1px solid var(--line);
   padding: 2rem 1rem 1.4rem;
-  background: rgba(255,255,255,.55);
+  background: rgba(255, 255, 255, .55);
 }
 
 .topbar > div,
 .layout {
-  max-width: 1040px;
+  width: min(1040px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
-h1 { margin: 0 0 .25rem; font-size: 2rem; }
-h2 { margin-top: 0; font-size: 1rem; }
-p { line-height: 1.55; }
+h1 {
+  margin: 0 0 .25rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.55;
+}
 
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
   gap: 1.5rem;
-  padding: 1.5rem 1rem 3rem;
+  padding: 1.5rem 0 3rem;
+}
+
+.layout > section,
+#feed {
+  min-width: 0;
 }
 
 .card {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 1rem 1.1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,.03);
+  margin: 0 0 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
 }
 
 .post-head {
   display: flex;
   align-items: center;
-  gap: .55rem;
-  flex-wrap: wrap;
+  gap: .65rem;
+  min-width: 0;
 }
 
 .avatar {
+  display: block;
+  flex: 0 0 auto;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--line);
-  flex: 0 0 auto;
   background: white;
 }
 
@@ -75,20 +104,32 @@ p { line-height: 1.55; }
   height: 52px;
 }
 
-.identity {
+.identity,
+.comment-body {
   min-width: 0;
 }
 
 .identity-row {
   display: flex;
-  gap: .4rem;
   align-items: baseline;
   flex-wrap: wrap;
+  gap: .4rem;
 }
 
-.name { font-weight: 700; }
-.handle, .meta, .note { color: var(--muted); }
-.handle, .meta { font-size: .9rem; }
+.name {
+  font-weight: 700;
+}
+
+.handle,
+.meta,
+.note {
+  color: var(--muted);
+}
+
+.handle,
+.meta {
+  font-size: .9rem;
+}
 
 .tag {
   display: inline-block;
@@ -99,11 +140,18 @@ p { line-height: 1.55; }
   color: var(--accent);
 }
 
+.post-text {
+  margin: .9rem 0 0;
+  line-height: 1.55;
+  white-space: normal;
+}
+
 .post-image {
+  display: block;
   width: 100%;
   max-height: 620px;
   object-fit: contain;
-  margin-top: .8rem;
+  margin-top: .9rem;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: #fff;
@@ -115,32 +163,81 @@ p { line-height: 1.55; }
   color: var(--muted);
 }
 
+/* Replies / threads */
 .comments {
-  margin-top: .9rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  margin-top: 1rem;
   padding-top: .8rem;
   border-top: 1px solid var(--line);
 }
 
+.thread-label {
+  display: block;
+  margin: 0 0 .25rem;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
 .comment {
   display: flex;
-  gap: .6rem;
+  align-items: flex-start;
+  gap: .65rem;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
   padding: .6rem 0;
+}
+
+.comment-body {
+  display: block;
+  flex: 1 1 auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.comment-text {
+  display: block;
+  margin-top: .18rem;
+  line-height: 1.48;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+.thread-children {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: .45rem;
+  padding-left: .8rem;
+  border-left: 2px solid var(--line);
+  overflow: visible;
 }
 
 .sidebar {
   position: sticky;
   top: 1rem;
   height: max-content;
+  min-width: 0;
 }
 
 .agent {
   display: flex;
+  align-items: flex-start;
   gap: .7rem;
   padding: .75rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.agent:last-child { border-bottom: 0; }
+.agent:last-child {
+  border-bottom: 0;
+}
 
 .empty {
   background: var(--card);
@@ -152,125 +249,11 @@ p { line-height: 1.55; }
 }
 
 @media (max-width: 760px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { position: static; }
-}
+  .layout {
+    grid-template-columns: 1fr;
+  }
 
-
-/* Thread rendering fix */
-.comments {
-  margin-top: 1rem;
-  padding-top: .75rem;
-  border-top: 1px solid var(--line);
-}
-.thread-label {
-  color: var(--muted);
-  font-size: .78rem;
-  margin-bottom: .2rem;
-}
-.comment {
-  display: flex;
-  gap: .6rem;
-  padding: .65rem 0;
-}
-.comment-body { min-width: 0; flex: 1; }
-.comment-text { margin-top: .18rem; line-height: 1.48; }
-.thread-children {
-  margin-top: .45rem;
-  margin-left: .25rem;
-  padding-left: .8rem;
-  border-left: 2px solid var(--line);
-}
-
-
-/* Thread visibility hardening */
-.card {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.layout > section,
-#feed {
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-.comments {
-  display: block !important;
-  width: 100% !important;
-  margin-top: 1rem;
-  padding-top: .75rem;
-  border-top: 1px solid var(--line);
-  overflow: visible !important;
-  max-height: none !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.thread-label {
-  display: block !important;
-  margin-bottom: .35rem;
-  color: var(--muted);
-  font-size: .8rem;
-  overflow: visible !important;
-}
-
-.comment {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: .6rem;
-  width: 100% !important;
-  padding: .65rem 0;
-  overflow: visible !important;
-  max-height: none !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.comment-body {
-  display: block !important;
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-  width: auto !important;
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-.comment-text {
-  display: block !important;
-  width: 100% !important;
-  margin-top: .2rem;
-  line-height: 1.5;
-  white-space: normal !important;
-  overflow: visible !important;
-  text-overflow: clip !important;
-  max-height: none !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: var(--text) !important;
-}
-
-.thread-children {
-  display: block !important;
-  margin-top: .5rem;
-  margin-left: .25rem;
-  padding-left: .8rem;
-  border-left: 2px solid var(--line);
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-.comment .identity-row {
-  display: flex !important;
-  flex-wrap: wrap;
-  gap: .35rem;
-  overflow: visible !important;
-}
-
-.comment .avatar.small {
-  display: block !important;
-  flex: 0 0 auto;
-  width: 30px;
-  height: 30px;
+  .sidebar {
+    position: static;
+  }
 }
